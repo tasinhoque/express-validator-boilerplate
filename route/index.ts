@@ -1,14 +1,15 @@
 import { Router, Request, Response } from 'express';
-import { validateRequestSchema } from '../middleware';
+import { validate } from '../middleware';
 import { registerSchema } from '../schema';
 
-export const rootRouter = Router();
+const router = Router();
 
-rootRouter.post(
+router.post(
   '/register',
-  registerSchema,
-  validateRequestSchema,
+  validate(registerSchema),
   (req: Request, res: Response) => {
     res.sendStatus(201);
   }
 );
+
+export { router as rootRouter };
