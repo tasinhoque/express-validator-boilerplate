@@ -1,6 +1,6 @@
 import { body } from 'express-validator';
 
-export const registerSchema = [
+export const registerValidator = [
   body('username')
     .isEmail()
     .withMessage('Username must contain a valid email address'),
