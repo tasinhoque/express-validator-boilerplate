@@ -7,7 +7,7 @@ const router = Router();
 router.post(
   '/register',
   validate(registerValidator),
-  (req: Request, res: Response) => {
+  (_: Request, res: Response) => {
     res.sendStatus(201);
   }
 );
